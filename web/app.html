@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>PatentPulse</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="app.html" aria-label="PatentPulse home">PatentPulse<span class="dot"></span></a>
+  </header>
+  <main class="stage">
+    <section class="hero">
+      <p class="eyebrow">Prior-art landscape scan</p>
+      <h1 class="display">Search the patent record before you build.</h1>
+      <p class="hero-copy">Describe your product idea in plain English. PatentPulse scans a snapshot of real patent records for related filings and ranks what it finds &mdash; informational only, not legal advice.</p>
+      <form id="scan-form" class="search-wrap glass">
+        <span class="search-ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"></circle><line x1="12.4" y1="12.4" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></line></svg>
+        </span>
+        <input id="scan-query" class="search-input" type="search" placeholder="e.g. a camera that reminds elderly users to take their medication" required aria-label="Describe your product idea">
+        <button class="go" type="submit">Scan</button>
+      </form>
+      <button id="sample-btn" class="link-btn" type="button">View a sample scan</button>
+    </section>
+    <section id="scan-results" aria-live="polite"></section>
+  </main>
+  <script src="lib/mock.js"></script>
+  <script src="lib/api.js"></script>
+  <script src="sections/scan.js"></script>
+</body>
+</html>

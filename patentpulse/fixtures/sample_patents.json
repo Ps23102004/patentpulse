@@ -1,0 +1,104 @@
+{
+ "_meta": {
+  "what": "DEMO FIXTURE. Eight real, granted US patents, transcribed by hand from their public Google Patents pages on 2026-08-19. Real patents, real text — but a fixed, hand-picked set of eight, not a search result. Nothing here is generated, paraphrased or invented.",
+  "why": "So PatentPulse runs end to end before EPO OPS credentials exist. Set EPO_OPS_KEY and EPO_OPS_SECRET and this file stops being used.",
+  "sourced_from": "https://patents.google.com/patent/<publication-number>/en — one public page per patent, read individually, no login and no scraping.",
+  "selection": "Four patents in solar-panel cleaning (so the README's demo query finds genuine hits) and four widely-known software/hardware patents (so the keyword index has realistic contrast). Chosen for the demo, not as any claim about a technical field.",
+  "field_notes": {
+   "assignee": "Google Patents' *current* assignee. For US6285999B1 that is Google LLC; the patent was originally assigned to the Leland Stanford Junior University and assigned to Google later.",
+   "filing_date": "The application filing date, which for several of these differs from the earliest priority date (US9455665B1 priority 2015-11-08, US10797636B2 priority 2017-01-26, US8046721B2 priority 2005-12-23 — a continuation).",
+   "claim_summary": "The opening of claim 1, verbatim and truncated. Not a summary written by anything.",
+   "cpc_codes": "Up to five CPC symbols as listed on the page."
+  }
+ },
+ "records": [
+  {
+   "patent_id": "US9455665B1",
+   "title": "Solar tracker cleaning system and method",
+   "abstract": "A solar tracker waterless cleaning system for cleaning solar panels of solar trackers in at least one solar tracker row, each solar tracker having a length and a width and being able to be positioned at a pre-determined angle, the cleaning system including at least one waterless cleaning apparatus operable to clean a panel surface of the solar tracker row without using water, at least two rails positioned horizontally parallel to the solar tracker row, a support frame for supporting the cleaning apparatus and a controller coupled with the cleaning apparatus and with the support frame for moving the cleaning apparatus in the width direction and the length direction of the solar tracker row, the support frame moving over the rails and moving the cleaning apparatus in a width direction and a length direction of the solar tracker row while maintaining a pre-determined angle in the width direction of the solar trackers.",
+   "claim_summary": "1. A solar tracker waterless cleaning system for cleaning solar panels of solar trackers in at least one solar tracker row, said solar tracker row comprising a plurality of solar trackers, each said solar tracker having a length and a width and being able to be positioned at a pre-determined angle, said waterless cleaning system comprising: at least one waterless cleaning apparatus operable to cl",
+   "assignee": "Ecoppia Scientific Ltd",
+   "grant_date": "2016-09-27",
+   "filing_date": "2016-01-25",
+   "cpc_codes": ["H02S40/10", "F24S40/20", "H02J7/35", "H02S20/32", "H02S30/10"],
+   "url": "https://patents.google.com/patent/US9455665B1/en"
+  },
+  {
+   "patent_id": "US10797636B2",
+   "title": "Waterless cleaning system and method for solar trackers using an autonomous robot",
+   "abstract": "A solar tracker waterless cleaning system for cleaning solar panels of a solar tracker being able to be positioned at a pre-determined angle, including a docking station and an autonomous robotic cleaner (ARC), the docking station coupled with an edge of the solar tracker, the ARC including at least one rechargeable power source, at least one cleaning cylinder and a controller, the cleaning cylinder including a plurality of fins which rotates for generating a directional air flow for pushing dirt off of the surface of the solar tracker without water, the controller including a motion sensor for determining an angle of the solar tracker and a heading of the ARC, the docking station including at least one electrical connector for recharging the rechargeable power source, the controller for controlling a cleaning process of the ARC and for transmitting and receiving signals to and from the ARC.",
+   "claim_summary": "1. A solar tracker waterless cleaning system for cleaning solar panels of a solar tracker, said solar tracker being able to be positioned at a pre-determined angle, said solar tracker waterless cleaning system comprising: a docking station, coupled with an edge of said solar tracker; and an autonomous robotic cleaner (ARC) capable of omnidirectional travel independent of the docking station, sa",
+   "assignee": "Evermore United SA",
+   "grant_date": "2020-10-06",
+   "filing_date": "2019-07-26",
+   "cpc_codes": ["F24S30/425", "B08B1/165", "B08B1/30", "B08B1/32", "B08B1/34"],
+   "url": "https://patents.google.com/patent/US10797636B2/en"
+  },
+  {
+   "patent_id": "US8500918B1",
+   "title": "Solar panel cleaning system and method",
+   "abstract": "System and method for cleaning a solar row of solar panels. The solar row has an upper edge elevated from ground level more than a lower edge to provide an inclination of the solar row. A cleaning assembly operates to clean a surface of the solar panels. A support frame supports the cleaning assembly and enables the cleaning assembly to move (1) upwardly and downwardly in the width direction of the solar row, and (2) in the length direction of the solar row. Operation and movement of the cleaning assembly is controlled by a control unit to cause the cleaning assembly to clean a surface of the solar panels during downward movement of the cleaning assembly. The cleaning assembly is preferably not operative during its upward vertical movement. During the downward movement, the cleaning assembly removes dirt, debris and dust from the surface of the solar panels and generates an air stream to blow off the dirt, debris, and dust.",
+   "claim_summary": "1. A solar panel cleaning system for cleaning solar panels of a solar row, the solar row having a length and a width, and the solar row being inclined and having an upper end and a lower end in the width direction of the solar row, the upper end being elevated to a position higher than the lower end, the cleaning system comprising: at least one cleaning apparatus that is selectively operable to c",
+   "assignee": "Ecoppia Scientific Ltd",
+   "grant_date": "2013-08-06",
+   "filing_date": "2013-01-28",
+   "cpc_codes": ["B08B1/30", "A46B13/005", "A46B13/02", "B08B1/32", "B08B1/34"],
+   "url": "https://patents.google.com/patent/US8500918B1/en"
+  },
+  {
+   "patent_id": "US9130502B1",
+   "title": "Photovoltaic panel cleaning machine",
+   "abstract": "The photovoltaic panel cleaning machine is installed upon a linear array of photovoltaic (solar) panels, automatically operating periodically to remove any dust, debris, and/or light condensation from the panels to optimize their efficiency. The machine is driven back and forth along tracks extending along opposite edges of the panel array, and receives electrical power from a storage battery charged by the solar panel array. The machine includes an air compressor, a blower and nozzles that blow dust and debris from the solar panels, and two different roller brushes. Air is blown over the panels on the first pass, and the machine then reverses direction to apply a first roller to the panels for further debris removal on a second pass. A third pass is made using the air blower, and the direction reverses once again, the second roller being applied on the fourth pass to statically attract any remaining debris.",
+   "claim_summary": "1. A photovoltaic panel cleaning machine for cleaning a linear array of photovoltaic panels, the machine comprising: a frame movably disposed upon the photovoltaic panels; a plurality of panel cleaning elements disposed across the frame, the panel cleaning elements comprising a pneumatic blower, a foam plastic roller, and a synthetic fiber roller; and an automated system disposed on the frame,",
+   "assignee": "King Fahd University of Petroleum and Minerals",
+   "grant_date": "2015-09-08",
+   "filing_date": "2014-12-15",
+   "cpc_codes": ["H02S40/10", "A46B13/001", "A46B15/0051", "A47L1/02", "B08B1/32"],
+   "url": "https://patents.google.com/patent/US9130502B1/en"
+  },
+  {
+   "patent_id": "US6285999B1",
+   "title": "Method for node ranking in a linked database",
+   "abstract": "A method assigns importance ranks to nodes in a linked database, such as any database of documents containing citations, the world wide web or any other hypermedia database. The rank assigned to a document is calculated from the ranks of documents citing it. In addition, the rank of a document is calculated from a constant representing the probability that a browser through the database will randomly jump to the document. The method is particularly useful in enhancing the performance of search engine results for hypermedia databases, such as the world wide web, whose documents have a large variation in quality.",
+   "claim_summary": "1. A computer implemented method of scoring a plurality of linked documents, comprising: obtaining a plurality of documents, at least some of the documents being linked documents, at least some of the documents being linking documents, and at least some of the documents being both linked documents and linking documents, each of the linked documents being pointed to by a link in one or more of the",
+   "assignee": "Google LLC",
+   "grant_date": "2001-09-04",
+   "filing_date": "1998-01-09",
+   "cpc_codes": ["G06F16/951", "G06F16/382", "Y10S707/99935", "Y10S707/99937"],
+   "url": "https://patents.google.com/patent/US6285999B1/en"
+  },
+  {
+   "patent_id": "US5960411A",
+   "title": "Method and system for placing a purchase order via a communications network",
+   "abstract": "A method and system for placing an order to purchase an item via the Internet. The order is placed by a purchaser at a client system and received by a server system. The server system receives purchaser information including identification of the purchaser, payment information, and shipment information from the client system. The server system then assigns a client identifier to the client system and associates the assigned client identifier with the received purchaser information. The server system sends to the client system the assigned client identifier and an HTML document identifying the item and including an order button. The client system receives and stores the assigned client identifier and receives and displays the HTML document. In response to the selection of the order button, the client system sends to the server system a request to purchase the identified item. The server system receives the request and combines the purchaser information associated with the client identifier of the client system to generate an order to purchase the item in accordance with the billing and shipment information whereby the purchaser effects the ordering of the product by selection of the order button.",
+   "claim_summary": "1. A method of placing an order for an item comprising: under control of a client system, displaying information identifying the item; and in response to only a single action being performed, sending a request to order the item along with an identifier of a purchaser of the item to a server system; under control of a single-action ordering component of the server system, receiving the request",
+   "assignee": "Amazon com Inc",
+   "grant_date": "1999-09-28",
+   "filing_date": "1997-09-12",
+   "cpc_codes": ["G06Q30/0635", "G06Q10/087", "G06Q20/04", "G06Q20/12", "G06Q30/04"],
+   "url": "https://patents.google.com/patent/US5960411A/en"
+  },
+  {
+   "patent_id": "US8046721B2",
+   "title": "Unlocking a device by performing gestures on an unlock image",
+   "abstract": "A device with a touch-sensitive display may be unlocked via gestures performed on the touch-sensitive display. The device is unlocked if contact with the display corresponds to a predefined gesture for unlocking the device. The device displays one or more unlock images with respect to which the predefined gesture is to be performed in order to unlock the device. The performance of the predefined gesture with respect to the unlock image may include moving the unlock image to a predefined location and/or moving the unlock image along a predefined path. The device may also display visual cues of the predefined gesture on the touch screen to remind a user of the gesture.",
+   "claim_summary": "1. A method of unlocking a hand-held electronic device, the device including a touch-sensitive display, the method comprising: detecting a contact with the touch-sensitive display at a first predefined location corresponding to an unlock image; continuously moving the unlock image on the touch-sensitive display in accordance with movement of the contact while continuous contact with the touch sc",
+   "assignee": "Apple Inc",
+   "grant_date": "2011-10-25",
+   "filing_date": "2009-06-02",
+   "cpc_codes": ["G06F3/0488", "H04M1/67", "G06F3/04883", "G06F21/36", "G06F3/017"],
+   "url": "https://patents.google.com/patent/US8046721B2/en"
+  },
+  {
+   "patent_id": "US7663607B2",
+   "title": "Multipoint touchscreen",
+   "abstract": "A touch panel having a transparent capacitive sensing medium configured to detect multiple touches or near touches that occur at the same time and at distinct locations in the plane of the touch panel and to produce distinct signals representative of the location of the touches on the plane of the touch panel for each of the multiple touches is disclosed.",
+   "claim_summary": "1. A touch panel comprising a transparent capacitive sensing medium configured to detect multiple touches or near touches that occur at a same time and at distinct locations in a plane of the touch panel and to produce distinct signals representative of a location of the touches on the plane of the touch panel for each of the multiple touches, wherein the transparent capacitive sensing medium comp",
+   "assignee": "Apple Inc",
+   "grant_date": "2010-02-16",
+   "filing_date": "2004-05-06",
+   "cpc_codes": ["G06F3/0414", "G06F3/04164", "G06F3/04166", "G06F3/044", "G06F3/0443"],
+   "url": "https://patents.google.com/patent/US7663607B2/en"
+  }
+ ]
+}
