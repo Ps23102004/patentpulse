@@ -215,6 +215,11 @@
       scanId++;
       renderScan(results, window.PATENTPULSE_MOCK, { mock: true });
       input.value = window.PATENTPULSE_MOCK.query;
+      // Always re-enable: this click may "win" the race against an in-flight
+      // live scan, whose own cleanup then sees a stale scanId and skips
+      // re-enabling submitBtn, wedging the form shut. Re-enabling here is
+      // unconditional regardless of which action completes last.
+      submitBtn.disabled = false;
     });
 
     document.addEventListener('mousemove', function(e){

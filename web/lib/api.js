@@ -20,8 +20,9 @@
       if (!r.ok) throw new Error('Scan service returned HTTP ' + r.status);
       return r.json();
     }).then(function(data){
-      if (!data || typeof data !== 'object' || !Array.isArray(data.results)){
-        throw new Error('Scan service returned an unexpected response shape');
+      if (!data || typeof data !== 'object' || !Array.isArray(data.results) ||
+          !data.scope || !data.landscape_summary){
+        throw new Error('Scan service returned a malformed response');
       }
       return data;
     });

@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import base64
 import json
+import logging
 import os
 import time
 from abc import ABC, abstractmethod
@@ -46,6 +47,8 @@ FIXTURE_PATH = Path(__file__).resolve().parent / "fixtures" / "sample_patents.js
 
 DEFAULT_WINDOW_DAYS = 45
 DEFAULT_LIMIT = 250
+
+logger = logging.getLogger(__name__)
 
 
 class PatentDataError(Exception):
@@ -351,6 +354,10 @@ class EpoOpsSource(PatentDataSource):
         self._session = session or requests.Session()
         self._token: str | None = None
         self._token_expires_at = 0.0
+        #: Records `_to_record` couldn't parse (no identity/date), counted per
+        #: `fetch()` call so the drop is visible in the log and the snapshot
+        #: note rather than silently shrinking the result set.
+        self._dropped_count = 0
 
     @staticmethod
     def credentials_present() -> bool:
@@ -468,6 +475,8 @@ class EpoOpsSource(PatentDataSource):
                 record = self._to_record(doc)
                 if record is not None:
                     records.append(record)
+                else:
+                    self._dropped_count += 1
         return records
 
     def _to_record(self, doc: dict) -> PatentRecord | None:
@@ -536,6 +545,7 @@ class EpoOpsSource(PatentDataSource):
         if limit < 1:
             raise ValueError("limit must be at least 1")
         limit = min(limit, _OPS_MAX_RESULTS)
+        self._dropped_count = 0
 
         end = date.today()
         cql = self._cql(end - timedelta(days=window_days), end)
@@ -565,13 +575,25 @@ class EpoOpsSource(PatentDataSource):
                 f"EPO OPS returned no publications for `{cql}`. Try a longer --window."
             )
 
+        note = self.source_note.format(count=len(records))
+        if self._dropped_count:
+            # Envelope-level failures already raise (see _search_page); this is
+            # the record-level case — a malformed individual document is
+            # skipped rather than failing the whole fetch, so make the loss
+            # visible instead of silently shrinking the snapshot.
+            logger.warning(
+                "EPO OPS response included %d record(s) that could not be parsed; dropped.",
+                self._dropped_count,
+            )
+            note += f" {self._dropped_count} record(s) in the response could not be parsed and were dropped."
+
         days = sorted(r.grant_date for r in records)
         return Snapshot(
             records=records,
             fetched_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             date_range=(days[0], days[-1]),
             source=self.source_id,
-            note=self.source_note.format(count=len(records)),
+            note=note,
         )
 
 

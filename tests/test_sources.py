@@ -218,6 +218,14 @@ def test_records_from_tolerates_an_empty_or_unexpected_envelope():
     assert source._records_from({"ops:world-patent-data": {}}) == []
 
 
+def test_records_from_counts_documents_it_could_not_parse():
+    source = EpoOpsSource(key="k", secret="s")
+    unparsable = {"bibliographic-data": {}}  # no id/date; _to_record returns None
+    records = source._records_from(_envelope(EXCHANGE_DOC, unparsable))
+    assert [r.patent_id for r in records] == ["US9455665B2"]
+    assert source._dropped_count == 1
+
+
 def test_search_text_covers_every_indexed_field():
     text = EpoOpsSource(key="k", secret="s")._to_record(EXCHANGE_DOC).search_text()
     assert "Solar panel cleaning" in text
@@ -411,6 +419,15 @@ def test_fetch_reports_the_date_range_it_actually_got():
     assert snapshot.date_range == ("2026-08-04", "2026-08-18")
     assert snapshot.source == "epo_ops"
     assert "Open Patent Services" in snapshot.note
+
+
+def test_fetch_notes_and_logs_records_it_had_to_drop(caplog):
+    page = _envelope(_doc("0"), {"bibliographic-data": {}})  # one good, one unparsable
+    with caplog.at_level("WARNING"):
+        snapshot = _fake_ops([page, {}]).fetch(window_days=30, limit=5)
+    assert len(snapshot.records) == 1
+    assert "1 record(s)" in snapshot.note and "dropped" in snapshot.note
+    assert any("dropped" in r.message for r in caplog.records)
 
 
 # -- the committed fixture -------------------------------------------------
